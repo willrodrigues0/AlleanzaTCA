@@ -449,7 +449,7 @@ AnimatorStateMachine:
     m_Position: {x: 320, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1584323636224051199}
-    m_Position: {x: 320, y: -50, z: 0}
+    m_Position: {x: 640, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1210335500856891120}
     m_Position: {x: 320, y: 10, z: 0}
@@ -470,7 +470,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 570, y: -330, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 2011352053831008845}
@@ -541,7 +541,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -952017017, guid: 41a650960e88c034da74593eebd60416, type: 3}
+      value: {fileID: 21300000, guid: 5eb544b500d0d39408477e3f035511bf, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -573,7 +573,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -952017017, guid: 41a650960e88c034da74593eebd60416, type: 3}
+    - {fileID: 21300000, guid: 5eb544b500d0d39408477e3f035511bf, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
