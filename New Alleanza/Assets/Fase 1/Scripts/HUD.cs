@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
-    public void Inventario(GameObject mapa)
+    public void InventarioAbre(GameObject mapa)
     {
-        Time.timeScale = 0;
         mapa.SetActive(true);
+    }
+
+    public void InventarioFecha(GameObject mapa)
+    {
+        mapa.SetActive(false);
     }
 }
