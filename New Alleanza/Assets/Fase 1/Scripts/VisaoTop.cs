@@ -19,14 +19,14 @@ public class VisaoTop : MonoBehaviour
 
     void Seguir ()
     {
-        if (jogador.GetComponent <JogadorTop> ().CamSeguindo)
+        if (jogador.GetComponent <Jogador2D_Terra> ().CamSeguindo)
         {
             transform.position = new Vector3 (alvo.position.x, alvo.position.y, transform.position.z);
             Camera.main.orthographicSize = 5;
         }
         else
         {
-            transform.position = jogador.GetComponent <JogadorTop> ().destinoCam;
+            transform.position = jogador.GetComponent <Jogador2D_Terra> ().destinoCam;
             Camera.main.orthographicSize = 8;
         }
     }

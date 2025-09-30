@@ -15,7 +15,7 @@ public class Jogador2D_Terra : MonoBehaviour
     [SerializeField] Vector2 destino;
     [SerializeField] Vector2 move;
     [SerializeField] bool DashAtivado = false;
-    [SerializeField] bool canJump = false;
+    //[SerializeField] bool canJump = false;
 
     [Header("Animação")]
     Animator anima;
@@ -72,8 +72,6 @@ public class Jogador2D_Terra : MonoBehaviour
             destinoCam = new Vector3(col.transform.position.x, col.transform.position.y, -10);
 
             CamSeguindo = false;
-
-            Debug.Log("Entrou na área");
         }
     }
 
@@ -90,7 +88,6 @@ public class Jogador2D_Terra : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Ataque habilitado");
             destino = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 

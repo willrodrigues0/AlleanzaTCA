@@ -30,12 +30,10 @@ public class Jogador2D_Mar : MonoBehaviour
         {
             darDash = false;
             mover = context.ReadValue <Vector2> ();
-            Debug.Log ("Jogador está andando");
         }
         else
         {
             mover = new Vector2(0, 0);
-            Debug.Log("Jogador está nadando");
         }
     }
 
@@ -51,7 +49,6 @@ public class Jogador2D_Mar : MonoBehaviour
         if (col.gameObject.tag == "chao")
         {
             NoChão = true;
-            Debug.Log ("Jogador encostou no chão");
         }
         else
         {
