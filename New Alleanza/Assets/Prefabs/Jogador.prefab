@@ -125,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.24, y: 40.319996}
+    oldSize: {x: 94.5, y: 125.99999}
     newSize: {x: 30.24, y: 40.319996}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -173,17 +173,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ec5db023aca6a498dd0788eba48f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CamSeguindo: 1
+  destinoCam: {x: 0, y: 0, z: 0}
   velocidade: 5
   velocidadeDash: 40
+  pulo: 0
   destino: {x: 0, y: 0}
-  mover: {x: 0, y: 0}
-  destinoCam: {x: 0, y: 0, z: 0}
+  move: {x: 0, y: 0}
   DashAtivado: 0
-  CamSeguindo: 1
-  anima: {fileID: 0}
-  sprd: {fileID: 0}
-  fragmentoFilho: {fileID: 0}
-  jogadorParente: {fileID: 0}
+  canJump: 0
 --- !u!82 &848472086513471148
 AudioSource:
   m_ObjectHideFlags: 0
