@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-<<<<<<<< HEAD:New Alleanza/Assets/Fase 1/Scripts/Jogador2D_Mar.cs
-public class Jogador2D_Mar : MonoBehaviour
-========
 public class JogadorMar2D : MonoBehaviour
->>>>>>>> Inventário:New Alleanza/Assets/Fase 1/Scripts/JogadorMar2D.cs
 {
     Rigidbody2D rig;
     public float velocidade, forcaDash;
