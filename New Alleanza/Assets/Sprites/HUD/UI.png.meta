@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventory sheet_0
+      name: Botao_Fechar
       rect:
         serializedVersion: 2
         x: 3474
@@ -157,7 +157,7 @@ TextureImporter:
         width: 136
         height: 127
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,6 +165,27 @@ TextureImporter:
       bones: []
       spriteID: 2550f9a525f9ad34dbb355b77c369477
       internalID: -794010074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slots
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 867
+        width: 2046
+        height: 976
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50454837a3370a42805ffe05745e330
+      internalID: 981283547
       vertices: []
       indices: 
       edges: []
@@ -180,7 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      inventory sheet_0: -794010074
+      Botao_Fechar: -794010074
+      Slots: 981283547
+      UI_1: 1846424152
+      UI_2: -447821253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

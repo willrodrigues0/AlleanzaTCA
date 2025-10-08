@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; //interface
@@ -37,4 +37,4 @@ public class ArrastaItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         transform.SetParent(parentDepoisArastar);
         image.raycastTarget = true;
     }
-}
+}*/

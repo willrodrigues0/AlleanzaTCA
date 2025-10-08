@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
-    public void InventarioAbre(GameObject mapa)
+    [SerializeField] GameObject mapa;
+    [SerializeField] GameObject inventario;
+
+    private void Start()
+    {
+        mapa.SetActive(false);
+        inventario.SetActive(false);
+    }
+
+    public void MapaAbre()
     {
         mapa.SetActive(true);
     }
 
-    public void InventarioFecha(GameObject mapa)
+    public void MapaFecha()
     {
         mapa.SetActive(false);
+    }
+
+    public void InventarioAbre()
+    {
+        inventario.SetActive(true);
+    }
+
+    public void InventarioFecha()
+    {
+        inventario.SetActive(false);
     }
 }

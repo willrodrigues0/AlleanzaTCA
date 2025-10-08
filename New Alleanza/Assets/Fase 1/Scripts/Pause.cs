@@ -21,7 +21,9 @@ public class Pause : MonoBehaviour
         PauseMenu.SetActive(true);
 
         if (postProcessVolume != null)
-            postProcessVolume.SetActive(true); 
+        {
+            postProcessVolume.SetActive(true);
+        }
 
         Time.timeScale = 0f;
         isPause = true;

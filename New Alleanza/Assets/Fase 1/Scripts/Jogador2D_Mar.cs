@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class JogadorMar2D : MonoBehaviour
+public class Jogador2D_Mar : MonoBehaviour
 {
     Rigidbody2D rig;
     public float velocidade, forcaDash;
@@ -13,7 +13,7 @@ public class JogadorMar2D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rig = GetComponent <Rigidbody2D> ();
+        rig = GetComponent<Rigidbody2D>();
     }
 
     void Update ()
