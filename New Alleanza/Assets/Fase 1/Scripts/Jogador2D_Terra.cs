@@ -8,6 +8,10 @@ public class Jogador2D_Terra : MonoBehaviour
     public bool CamSeguindo = true;
     public Vector3 destinoCam;
 
+    public GameObject mochila, mochilaInteracao;
+    public GameObject mapa, mapaInteracao;
+    public float distanciaMochila, distanciaMapa;
+
     [Header("Movimento")]
     [SerializeField] int velocidade;
     [SerializeField] float velocidadeDash, pulo;
@@ -43,6 +47,27 @@ public class Jogador2D_Terra : MonoBehaviour
 
         anima.SetFloat("SideMove", Mathf.Abs(xMove));
         anima.SetFloat("UDMove", yMove);
+
+        distanciaMochila = Vector2.Distance (transform.position, mochila.transform.position);
+        distanciaMapa = Vector2.Distance (transform.position, mapa.transform.position);
+
+        if (distanciaMochila < 2)
+        {
+            mochilaInteracao.SetActive (true);
+        }
+        else
+        {
+            mochilaInteracao.SetActive (false);
+        }
+
+        if (distanciaMapa < 2)
+        {
+            mapaInteracao.SetActive (true);
+        }
+        else
+        {
+            mapaInteracao.SetActive (false);
+        }
     }
 
     private void OnMove()

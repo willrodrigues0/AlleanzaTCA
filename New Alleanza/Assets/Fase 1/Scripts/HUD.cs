@@ -6,38 +6,42 @@ using UnityEngine.SceneManagement;
 public class HUD : MonoBehaviour
 {
     //SISTEMA DE FERRAMENTAS
-    [SerializeField] GameObject mapa;
-    [SerializeField] GameObject inventario;
+    [SerializeField] GameObject mapaMenu;
+    [SerializeField] GameObject inventarioMenu;
     [SerializeField] GameObject UI;
+
+    //COLETA DE FERRAMENTAS
+    public GameObject inventarioButton, mapaButton;
+    public GameObject MochilaCenario, MapaCenario; //todo o Canvas, não só o sprite
 
     private void Awake()
     {
-        mapa.SetActive(false);
-        inventario.SetActive(false);
+        mapaMenu.SetActive(false);
+        inventarioMenu.SetActive(false);
         UI.SetActive(true);
     }
 
     public void MapaAbre()
     {
-        mapa.SetActive(true);
+        mapaMenu.SetActive(true);
         UI.SetActive(false);
     }
 
     public void MapaFecha()
     {
-        mapa.SetActive(false);
+        mapaMenu.SetActive(false);
         UI.SetActive(true);
     }
 
     public void InventarioAbre()
     {
-        inventario.SetActive(true);
+        inventarioMenu.SetActive(true);
         UI.SetActive(false);
     }
 
     public void InventarioFecha()
     {
-        inventario.SetActive(false);
+        inventarioMenu.SetActive(false);
         UI.SetActive(true);
     }
 
@@ -83,5 +87,18 @@ public class HUD : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MenuPrincipal");
+    }
+
+    //SISTEMA DE COLETA DE FERRAMENTAS
+    public void HabilitarInventario ()
+    {
+        inventarioButton.SetActive (true);
+        MochilaCenario.SetActive (false);
+    }
+
+    public void HabilitarMapa ()
+    {
+        mapaButton.SetActive (true);
+        MapaCenario.SetActive (false);
     }
 }
