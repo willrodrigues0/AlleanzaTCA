@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7917969892716137283}
   - component: {fileID: 902856190193114609}
-  - component: {fileID: 2024870765873153704}
   - component: {fileID: 860662464709950953}
   - component: {fileID: 8254580052704621613}
   - component: {fileID: 848472086513471148}
   - component: {fileID: 3829607506751707028}
+  - component: {fileID: 401506574400823936}
   m_Layer: 0
   m_Name: Jogador
   m_TagString: Untagged
@@ -89,51 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2024870765873153704
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5343933573526180817}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.5, y: 125.99999}
-    newSize: {x: 30.24, y: 40.319996}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.78, y: 0.91}
-  m_EdgeRadius: 0
 --- !u!50 &860662464709950953
 Rigidbody2D:
   serializedVersion: 4
@@ -175,6 +130,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CamSeguindo: 1
   destinoCam: {x: 0, y: 0, z: 0}
+  mochila: {fileID: 0}
+  mochilaInteracao: {fileID: 0}
+  mapa: {fileID: 0}
+  mapaInteracao: {fileID: 0}
+  distanciaMochila: 0
+  distanciaMapa: 0
   velocidade: 5
   velocidadeDash: 40
   pulo: 0
@@ -298,3 +259,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &401506574400823936
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5343933573526180817}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 94.50001, y: 126.00001}
+  m_Direction: 0

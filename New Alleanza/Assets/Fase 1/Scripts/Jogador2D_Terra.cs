@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jogador2D_Terra : MonoBehaviour
 {
@@ -12,27 +14,28 @@ public class Jogador2D_Terra : MonoBehaviour
     public GameObject mapa, mapaInteracao;
     public float distanciaMochila, distanciaMapa;
 
+    public GameObject rampa;
+
     [Header("Movimento")]
     [SerializeField] int velocidade;
     [SerializeField] float velocidadeDash, pulo;
     [SerializeField] Vector2 destino;
     [SerializeField] Vector2 move;
     [SerializeField] bool DashAtivado = false;
-    //[SerializeField] bool canJump = false;
+
+    string nomeCena;
 
     [Header("Animação")]
     Animator anima;
     float xMove, yMove;
-
-    //[Header("Minigame")]
-    //public Transform fragmentoFilho;
-    //public Transform jogadorParente;
 
     // Start is called before the first frame update
     void Start()
     {
         anima = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
+
+        nomeCena = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -43,39 +46,46 @@ public class Jogador2D_Terra : MonoBehaviour
             Dash();
         }
 
+        if (nomeCena == "Praia")
+        {
+            InteracaoFerramentas();
+        }
+
         OnMove();
 
         anima.SetFloat("SideMove", Mathf.Abs(xMove));
         anima.SetFloat("UDMove", yMove);
-
-        distanciaMochila = Vector2.Distance (transform.position, mochila.transform.position);
-        distanciaMapa = Vector2.Distance (transform.position, mapa.transform.position);
+    }
+    
+    void InteracaoFerramentas ()
+    {
+        distanciaMochila = Vector2.Distance(transform.position, mochila.transform.position);
+        distanciaMapa = Vector2.Distance(transform.position, mapa.transform.position);
 
         if (distanciaMochila < 2)
         {
-            mochilaInteracao.SetActive (true);
+            mochilaInteracao.SetActive(true);
         }
         else
         {
-            mochilaInteracao.SetActive (false);
+            mochilaInteracao.SetActive(false);
         }
 
         if (distanciaMapa < 2)
         {
-            mapaInteracao.SetActive (true);
+            mapaInteracao.SetActive(true);
         }
         else
         {
-            mapaInteracao.SetActive (false);
+            mapaInteracao.SetActive(false);
         }
     }
 
     private void OnMove()
     {
-        rig.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * velocidade, Input.GetAxisRaw("Vertical") * velocidade);
+        rig.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * velocidade, rig.velocity.y);
 
         xMove = Input.GetAxisRaw("Horizontal");
-        yMove = Input.GetAxisRaw("Vertical");
 
         if (xMove < 0)
         {
@@ -87,7 +97,8 @@ public class Jogador2D_Terra : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    //REPAGINAR ISSO AQUI
+    /*void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "area ataque")
         {
@@ -97,7 +108,7 @@ public class Jogador2D_Terra : MonoBehaviour
 
             CamSeguindo = false;
         }
-    }
+    
 
     void OnTriggerExit2D(Collider2D col)
     {
@@ -105,6 +116,14 @@ public class Jogador2D_Terra : MonoBehaviour
         {
             DashAtivado = false;
             CamSeguindo = true;
+        }
+    }*/
+
+    void OnColliderEnter2D (Collider2D col)
+    {
+        if (col.gameObject.tag == "chao")
+        {
+            rampa.SetActive(false);
         }
     }
 
