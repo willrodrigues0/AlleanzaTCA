@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
@@ -89,7 +91,7 @@ public class HUD : MonoBehaviour
         SceneManager.LoadScene("MenuPrincipal");
     }
 
-    //SISTEMA DE COLETA DE FERRAMENTAS
+    //SISTEMA DE COLETA DE FERRAMENTAS --> BOTÃO
     public void HabilitarInventario ()
     {
         inventarioButton.SetActive (true);
@@ -101,4 +103,9 @@ public class HUD : MonoBehaviour
         mapaButton.SetActive (true);
         MapaCenario.SetActive (false);
     }
+    
+    //Dialogo.
 }
+
+
+    
