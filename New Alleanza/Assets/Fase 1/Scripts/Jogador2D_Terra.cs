@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +9,7 @@ public class Jogador2D_Terra : MonoBehaviour
     public bool CamSeguindo = true;
     public Vector3 destinoCam;
 
+    [Header ("CasaMorgan")]
     public GameObject mochila, mochilaInteracao;
     public GameObject mapa, mapaInteracao;
     public float distanciaMochila, distanciaMapa;
@@ -23,13 +23,12 @@ public class Jogador2D_Terra : MonoBehaviour
     [SerializeField] Vector2 move;
     [SerializeField] bool DashAtivado = false;
 
-    string nomeCena;
+    public string nomeCena;
 
     [Header("Animação")]
     Animator anima;
     float xMove, yMove;
 
-    // Start is called before the first frame update
     void Start()
     {
         anima = GetComponent<Animator>();
@@ -38,7 +37,6 @@ public class Jogador2D_Terra : MonoBehaviour
         nomeCena = SceneManager.GetActiveScene().name;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (DashAtivado)
@@ -46,7 +44,7 @@ public class Jogador2D_Terra : MonoBehaviour
             Dash();
         }
 
-        if (nomeCena == "Praia")
+        if (nomeCena == "MorganHouse")
         {
             InteracaoFerramentas();
         }
@@ -57,7 +55,7 @@ public class Jogador2D_Terra : MonoBehaviour
         anima.SetFloat("UDMove", yMove);
     }
     
-    void InteracaoFerramentas ()
+    void InteracaoFerramentas()
     {
         distanciaMochila = Vector2.Distance(transform.position, mochila.transform.position);
         distanciaMapa = Vector2.Distance(transform.position, mapa.transform.position);
@@ -81,10 +79,9 @@ public class Jogador2D_Terra : MonoBehaviour
         }
     }
 
-    private void OnMove()
+    void OnMove()
     {
         rig.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * velocidade, rig.velocity.y);
-
         xMove = Input.GetAxisRaw("Horizontal");
 
         if (xMove < 0)
@@ -124,10 +121,11 @@ public class Jogador2D_Terra : MonoBehaviour
         if (col.gameObject.tag == "chao")
         {
             rampa.SetActive(false);
+            Debug.Log ("Rampa cade");
         }
     }
 
-    private void Dash()
+    void Dash()
     {
         if (Input.GetMouseButtonDown(0))
         {
