@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 902856190193114609}
   - component: {fileID: 860662464709950953}
   - component: {fileID: 8254580052704621613}
-  - component: {fileID: 7317896647150442752}
   - component: {fileID: 848472086513471148}
   - component: {fileID: 3829607506751707028}
   - component: {fileID: 401506574400823936}
@@ -138,24 +137,6 @@ MonoBehaviour:
   destino: {x: 0, y: 0}
   move: {x: 0, y: 0}
   DashAtivado: 0
---- !u!114 &7317896647150442752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5343933573526180817}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61d437069000d34c98658b48ac2995a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mochila: {fileID: 0}
-  mochilaInteracao: {fileID: 0}
-  mapa: {fileID: 0}
-  mapaInteracao: {fileID: 0}
-  distanciaMochila: 0
-  distanciaMapa: 0
 --- !u!82 &848472086513471148
 AudioSource:
   m_ObjectHideFlags: 0

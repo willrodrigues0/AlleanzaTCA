@@ -1,0 +1,15 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneController : MonoBehaviour
+{
+    public void GoPraia()
+    {
+        SceneManager.LoadScene("Praia");
+    }
+    
+    public void GoCasa ()
+    {
+        SceneManager.LoadScene("MorganHouse");
+    }
+}

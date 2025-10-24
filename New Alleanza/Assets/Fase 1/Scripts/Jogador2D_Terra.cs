@@ -18,9 +18,6 @@ public class Jogador2D_Terra : MonoBehaviour
     [SerializeField] Vector2 move;
     [SerializeField] bool DashAtivado = false;
 
-    [Header("Ferramentas")]
-    string nomeCena;
-
     [Header("Animação")]
     Animator anima;
     float xMove;
@@ -30,8 +27,6 @@ public class Jogador2D_Terra : MonoBehaviour
     {
         anima = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
-
-        nomeCena = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -44,16 +39,6 @@ public class Jogador2D_Terra : MonoBehaviour
             Dash();
         }
 
-        if (nomeCena == "MorganHouse")
-        {
-            GetComponent<InteraçãoItens>().enabled = true;
-        }
-        else
-        {
-            GetComponent<InteraçãoItens>().enabled = false;
-        }
-
-        Debug.Log(xMove);
         anima.SetFloat("SideMove", Mathf.Abs (xMove));
     }
 
