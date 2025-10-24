@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,10 +9,6 @@ public class Jogador2D_Terra : MonoBehaviour
     public bool CamSeguindo = true;
     public Vector3 destinoCam;
 
-    public GameObject mochila, mochilaInteracao;
-    public GameObject mapa, mapaInteracao;
-    public float distanciaMochila, distanciaMapa;
-
     public GameObject rampa;
 
     [Header("Movimento")]
@@ -23,11 +18,12 @@ public class Jogador2D_Terra : MonoBehaviour
     [SerializeField] Vector2 move;
     [SerializeField] bool DashAtivado = false;
 
+    [Header("Ferramentas")]
     string nomeCena;
 
     [Header("Animação")]
     Animator anima;
-    float xMove, yMove;
+    float xMove;
 
     // Start is called before the first frame update
     void Start()
@@ -41,51 +37,30 @@ public class Jogador2D_Terra : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Mover();
+
         if (DashAtivado)
         {
             Dash();
         }
 
-        if (nomeCena == "Praia")
+        if (nomeCena == "MorganHouse")
         {
-            InteracaoFerramentas();
-        }
-
-        OnMove();
-
-        anima.SetFloat("SideMove", Mathf.Abs(xMove));
-        anima.SetFloat("UDMove", yMove);
-    }
-    
-    void InteracaoFerramentas ()
-    {
-        distanciaMochila = Vector2.Distance(transform.position, mochila.transform.position);
-        distanciaMapa = Vector2.Distance(transform.position, mapa.transform.position);
-
-        if (distanciaMochila < 2)
-        {
-            mochilaInteracao.SetActive(true);
+            GetComponent<InteraçãoItens>().enabled = true;
         }
         else
         {
-            mochilaInteracao.SetActive(false);
+            GetComponent<InteraçãoItens>().enabled = false;
         }
 
-        if (distanciaMapa < 2)
-        {
-            mapaInteracao.SetActive(true);
-        }
-        else
-        {
-            mapaInteracao.SetActive(false);
-        }
+        Debug.Log(xMove);
+        anima.SetFloat("SideMove", Mathf.Abs (xMove));
     }
 
-    private void OnMove()
+    void Mover()
     {
         rig.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * velocidade, rig.velocity.y);
-
-        xMove = Input.GetAxisRaw("Horizontal");
+        xMove = Input.GetAxisRaw ("Horizontal");
 
         if (xMove < 0)
         {
@@ -123,7 +98,7 @@ public class Jogador2D_Terra : MonoBehaviour
     {
         if (col.gameObject.tag == "chao")
         {
-            rampa.SetActive(false);
+            rampa.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
