@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class InteraçãoCasaMorgan : MonoBehaviour
 {
-    public GameObject jogador;
+    GameObject jogador;
 
     public GameObject mochila, mochilaInteracao;
     public GameObject mapa, mapaInteracao;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HUD : MonoBehaviour
+public class HUD_Quarto : MonoBehaviour
 {
     //SISTEMA DE FERRAMENTAS
     [SerializeField] GameObject mapaMenu;
