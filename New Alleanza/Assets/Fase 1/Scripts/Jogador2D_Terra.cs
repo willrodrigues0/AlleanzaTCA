@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Jogador2D_Terra : MonoBehaviour
 {
@@ -9,9 +8,7 @@ public class Jogador2D_Terra : MonoBehaviour
     public bool CamSeguindo = true;
     public Vector3 destinoCam;
 
-    public GameObject rampa;
-
-    [Header("Movimento")]
+   [Header("Movimento")]
     [SerializeField] int velocidade;
     [SerializeField] float velocidadeDash, pulo;
     [SerializeField] Vector2 destino;
@@ -81,9 +78,9 @@ public class Jogador2D_Terra : MonoBehaviour
 
     void OnColliderEnter2D (Collider2D col)
     {
-        if (col.gameObject.tag == "chao")
+        if (col.gameObject.tag == "ponte")
         {
-            rampa.GetComponent<BoxCollider2D>().enabled = false;
+            
         }
     }
 
