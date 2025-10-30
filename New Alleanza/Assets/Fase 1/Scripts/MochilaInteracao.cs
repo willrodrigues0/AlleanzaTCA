@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using System.Collections;
 
 public class MochilaInteracao : MonoBehaviour
 {
@@ -14,33 +13,38 @@ public class MochilaInteracao : MonoBehaviour
     public GameObject dialogueUI;        
     public TMP_Text dialogueUIText;      
 
+    private bool jogoPausado = false; // controla se o jogador pode se mover
+
+    // Chamado ao clicar no botão de pegar
     public void PegarMochila()
     {
-        // ativa o botão do inventário
         if (inventarioButton != null)
             inventarioButton.SetActive(true);
 
-        // mostra o diálogo
+        // 🔹 Pausa o jogo ANTES de desativar a mochila
+        Time.timeScale = 0f;
+        jogoPausado = true;
+
+        // Mostra o painel
         if (dialogueUI != null && dialogueUIText != null)
         {
             dialogueUI.SetActive(true);
             dialogueUIText.text = dialogueText;
         }
 
-        // inicia a coroutine para fechar o diálogo e desativar a mochila depois
-        StartCoroutine(FecharDialogoAposTempo(3f));
+        // Agora sim, desativa a mochila
+        if (MochilaCenario != null)
+            MochilaCenario.SetActive(false);
     }
 
-    private IEnumerator FecharDialogoAposTempo(float tempo)
+    // Chamado ao clicar no botão "X"
+    public void FecharDialogo()
     {
-        yield return new WaitForSeconds(tempo);
-
-        // fecha o diálogo
         if (dialogueUI != null)
             dialogueUI.SetActive(false);
 
-        // desativa a mochila (só agora!)
-        if (MochilaCenario != null)
-            MochilaCenario.SetActive(false);
+        // 🔹 Retoma o jogo
+        Time.timeScale = 1f;
+        jogoPausado = false;
     }
 }
