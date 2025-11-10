@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jogador2D_Terra : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Jogador2D_Terra : MonoBehaviour
 
     public bool CamSeguindo = true;
     public Vector3 destinoCam;
+
+    string nameScene;
 
    [Header("Movimento")]
     [SerializeField] int velocidade;
@@ -17,13 +20,15 @@ public class Jogador2D_Terra : MonoBehaviour
 
     [Header("Animação")]
     Animator anima;
-    float xMove;
+    float xMove, yMove;
 
     // Start is called before the first frame update
     void Start()
     {
         anima = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
+
+        nameScene = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -41,8 +46,13 @@ public class Jogador2D_Terra : MonoBehaviour
 
     void Mover()
     {
-        rig.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * velocidade, rig.velocity.y);
-        xMove = Input.GetAxisRaw ("Horizontal");
+        rig.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * velocidade, yMove * velocidade);
+        xMove = Input.GetAxisRaw("Horizontal");
+        
+        if (nameScene == "Cidade")
+        {
+            yMove = Input.GetAxisRaw("Vertical");
+        }
 
         if (xMove < 0)
         {
