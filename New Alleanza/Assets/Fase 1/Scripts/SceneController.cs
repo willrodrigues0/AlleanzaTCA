@@ -15,9 +15,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("MorganHouse");
     }
 
-    void Update ()
+    public void GoEscadaria()
     {
-        
+        SceneManager.LoadScene("Escadaria");
     }
     
     /*void OnColliderEnter2D (Collider2D col)
