@@ -9,7 +9,7 @@ public class Jogador2D_Terra : MonoBehaviour
     public bool CamSeguindo = true;
     public Vector3 destinoCam;
 
-    string nameScene;
+    public string nameScene;
 
    [Header("Movimento")]
     [SerializeField] int velocidade;

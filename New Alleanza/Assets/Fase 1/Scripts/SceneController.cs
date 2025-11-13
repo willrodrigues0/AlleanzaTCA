@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public GameObject cam;
+    //public GameObject cam;
 
     public void GoPraia()
     {

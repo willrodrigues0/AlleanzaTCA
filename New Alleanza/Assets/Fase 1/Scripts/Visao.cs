@@ -3,12 +3,23 @@ using UnityEngine;
 public class Visao : MonoBehaviour
 {
     public Transform alvo;
-
     bool seguir;
+
+    GameObject jogador;
+
+    void Start ()
+    {
+        jogador = GameObject.Find("Jogador");
+    }
 
     void Update()
     {
         Seguir();
+
+        if (jogador.GetComponent<Jogador2D_Terra>().nameScene == "MorganHouse")
+        {
+            QuartoSeguir ();
+        } 
     }
 
     /*void Seguir ()
@@ -24,6 +35,11 @@ public class Visao : MonoBehaviour
             Camera.main.orthographicSize = 8;
         }
     }*/
+
+    void QuartoSeguir()
+    {
+        transform.position = new Vector3 (alvo.transform.position.x, -0.08999968f, transform.position.z);
+    }
 
     void Seguir()
     {
