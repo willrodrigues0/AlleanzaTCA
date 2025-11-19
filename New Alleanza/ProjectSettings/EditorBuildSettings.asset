@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/HUD/Menu Principal/MenuPrincipal.unity
     guid: 881ad89e25566c6429dd1da38c7f3605
   - enabled: 1
+    path: Assets/Fase 1/Stepline/1 - Cut/CutsceneInicial.unity
+    guid: 40b8d9eff1bd2944c8458e863af023da
+  - enabled: 1
     path: Assets/Fase 1/Stepline/Places/MorganHouse.unity
     guid: 37c84c0757cd3e24180b2b728368a775
   - enabled: 1

@@ -12,7 +12,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public void Jogar()
     {
-        SceneManager.LoadScene("MorganHouse");
+        SceneManager.LoadScene("CutsceneInicial");
     }
     
     public void AbrirOpcoes()
