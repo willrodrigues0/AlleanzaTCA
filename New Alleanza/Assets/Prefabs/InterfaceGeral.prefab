@@ -1162,7 +1162,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &6258034726197036694
 MonoBehaviour:
@@ -1614,13 +1614,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91b2a82b761c174aa0c9d4fbf563b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapaMenu: {fileID: 4171372423838032564}
-  inventarioMenu: {fileID: 4306536813540882901}
+  mapaMenu: {fileID: 0}
+  inventarioMenu: {fileID: 0}
   UI: {fileID: 6972011444334691659}
-  inventarioButton: {fileID: 444922479192599751}
-  mapaButton: {fileID: 4648620785001442914}
-  MochilaCenario: {fileID: 2541041217897980664}
-  MapaCenario: {fileID: 1495438859960830545}
+  inventarioButton: {fileID: 0}
+  mapaButton: {fileID: 0}
+  MochilaCenario: {fileID: 0}
+  MapaCenario: {fileID: 0}
   PauseMenu: {fileID: 2482652859421571042}
   ConfigMenu: {fileID: 7158389415113549435}
   isPause: 0
@@ -3261,7 +3261,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &3117918555247317170
 MonoBehaviour:
@@ -3400,7 +3400,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &5526377386202057822
 MonoBehaviour:
@@ -4361,7 +4361,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &7131018812325714686
 MonoBehaviour:
